@@ -9,7 +9,7 @@ class MTAStatus
 
   def initialize(service)
     @service = service.downcase if service
-    @doc  = Nokogiri::HTML(open(MTA))
+    @doc  = Nokogiri::HTML(URI.open(MTA))
     run
   end
 
